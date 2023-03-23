@@ -1,6 +1,6 @@
 # Import the submodules
 from .core import *
-from .gpt4 import *
+from .gpt import *
 from .helpers import *
 from .cli import *
 

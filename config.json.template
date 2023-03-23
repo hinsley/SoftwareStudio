@@ -1,0 +1,8 @@
+{
+    "OpenAI Key": "YOUR KEY HERE",
+    "Models": {
+        "Chat": "gpt-3.5-turbo",
+        "Code": "code-davinci-002",
+        "Documentation": "gpt-3.5-turbo"
+    }
+}

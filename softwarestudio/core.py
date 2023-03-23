@@ -1,5 +1,5 @@
-# Import the gpt4 module
-from .gpt4 import generate_code
+# Import the gpt module
+from .gpt import generate_code
 
 # Define a class that represents a software project
 class SoftwareProject:
@@ -13,9 +13,9 @@ class SoftwareProject:
     def add_file(self, name, content):
         self.files[name] = content
 
-    # Generate a file for the project using GPT-4 based on a prompt
+    # Generate a file for the project using GPT based on a prompt
     def generate_file(self, name, prompt):
-        content = generate_code(prompt) # Call the gpt4 module function
+        content = generate_code(prompt) # Call the gpt module function
         self.add_file(name, content) # Add the file to the project
 
     # Save the project files to disk
@@ -35,7 +35,7 @@ def create_sample_project():
     # Create a new project with a name and a description
     project = SoftwareProject("HelloWorld", "A simple Python program that prints hello world")
 
-    # Generate a file for the project using GPT-4 based on a prompt
+    # Generate a file for the project using GPT based on a prompt
     prompt = "Write a Python script that prints hello world"
     project.generate_file("hello.py", prompt)
 

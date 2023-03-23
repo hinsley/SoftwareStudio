@@ -12,8 +12,8 @@ def test_create_project():
     ]
 
     outputs = [
-        "Welcome to SoftwareStudio TestProject!\nYou can use GPT-4 to generate files for your project based on your prompts.\nTo exit, enter 'q' or 'quit' at any time.",
-        "Welcome to SoftwareStudio TestProject!\nYou can use GPT-4 to generate files for your project based on your prompts.\nTo exit, enter 'q' or 'quit' at any time."
+        "Welcome to SoftwareStudio TestProject!\nYou can use GPT to generate files for your project based on your prompts.\nTo exit, enter 'q' or 'quit' at any time.",
+        "Welcome to SoftwareStudio TestProject!\nYou can use GPT to generate files for your project based on your prompts.\nTo exit, enter 'q' or 'quit' at any time."
     ]
 
     # Loop through each argument and output pair

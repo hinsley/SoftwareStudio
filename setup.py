@@ -9,7 +9,7 @@ with open("README.md", "r") as f:
 setuptools.setup(
     name="SoftwareStudio", # The name of your project
     version="0.1.0", # The version of your project
-    description="A Python package that leverages GPT-4 to help developers write software without writing even a single line of code manually.", # A short description of your project
+    description="A Python package that leverages GPT to help developers write software without writing even a single line of code manually.", # A short description of your project
     long_description=long_description, # A long description of your project from the README.md file
     long_description_content_type="text/markdown", # The type of the long description
     url="https://github.com/hinsley/SoftwareStudio", # The URL of your project's homepage

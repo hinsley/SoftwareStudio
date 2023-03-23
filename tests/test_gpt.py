@@ -1,7 +1,7 @@
 import pytest
 
-# Import the gpt4 module from the softwarestudio package
-from softwarestudio import gpt4
+# Import the gpt module from the softwarestudio package
+from softwarestudio import gpt
 
 # Define a test function that checks if the generate_code function works as expected
 def test_generate_code():
@@ -20,7 +20,7 @@ def test_generate_code():
 
     # Loop through each prompt and response pair
     for prompt, response in zip(prompts, responses):
-        # Mock the openai.ChatCompletion.create method to return the response as GPT-4 generated message
+        # Mock the openai.ChatCompletion.create method to return the response as GPT generated message
         with unittest.mock.patch("openai.ChatCompletion.create", return_value={"choices": [{"message": {"content": response}}]}, seed=0):
             # Call the generate_code function with the prompt and assert that it returns the response
-            assert gpt4.generate_code(prompt) == response
+            assert gpt.generate_code(prompt) == response

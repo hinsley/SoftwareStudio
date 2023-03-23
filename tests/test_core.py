@@ -20,10 +20,10 @@ def test_software_project():
     # Assert that the file is added to the project files dictionary
     assert project.files == {"test.txt": "This is a test file"}
 
-    # Generate a file for the project using GPT-4 based on a prompt (using mock response)
+    # Generate a file for the project using GPT based on a prompt (using mock response)
     prompt = "Write a Python script that prints hello world"
     code = "print('Hello world')"
-    with unittest.mock.patch("softwarestudio.gpt4.generate_code", return_value=code):
+    with unittest.mock.patch("softwarestudio.gpt.generate_code", return_value=code):
         project.generate_file("hello.py", prompt)
 
     # Assert that the file is generated and added to the project files dictionary
