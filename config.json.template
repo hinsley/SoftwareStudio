@@ -3,6 +3,8 @@
     "Models": {
         "Chat": "gpt-3.5-turbo",
         "Code": "code-davinci-002",
-        "Documentation": "gpt-3.5-turbo"
+        "Documentation": "gpt-3.5-turbo",
+        "Model": "gpt-3.5-turbo",
+        "Segmentation": "gpt-3.5-turbo"
     }
 }

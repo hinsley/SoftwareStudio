@@ -3,7 +3,7 @@ import os
 
 # Import the core and gpt modules from the softwarestudio package
 from .core import SoftwareProject
-from .gpt import document_file, generate_code
+from .gpt import document_file, generate_code, generate_metadata
 
 # Import the helper functions from the helpers module
 from .helpers import get_valid_file_name
@@ -53,6 +53,27 @@ def create_project():
 
                 # Add the file to their project with the given name and content (using core module method)
                 project.add_file(file_name, documentation)
+                project.save()
+
+                # Print a confirmation message 
+                print(f"File {file_name} added to your project.")
+            continue
+        elif prompt.lower().startswith("metadata "):
+            metadata = generate_metadata(os.path.join(project.name, prompt[len("metadata "):]))
+            print("GPT generated metadata:")
+            print(metadata)
+
+            # Ask the user if they want to save the metadata as a file in their project
+            save = input("Do you want to save this metadata as a file in your project? (y/n): ")
+
+            # Check if the user wants to save the metadata as a file in their project
+            if save.lower() == "y":
+                # Ask the user for a valid file name for their metadata (using helper function)
+                file_name = get_valid_file_name("Enter a file name for your metadata: ")
+
+                # Add the file to their project with the given name and content (using core module method)
+                project.add_file(file_name, metadata)
+                project.save()
 
                 # Print a confirmation message 
                 print(f"File {file_name} added to your project.")
@@ -84,16 +105,12 @@ def create_project():
 
             # Add the file to their project with the given name and content (using core module method)
             project.add_file(file_name, code)
+            project.save()
 
             # Print a confirmation message 
             print(f"File {file_name} added to your project.")
 
-    
-    # Save the project files to disk (using core module method)
-    project.save()
-
     # Print a goodbye message and exit 
-    print(f"Your project {args.name} has been saved.")
     print("Thank you for using SoftwareStudio. Goodbye!")
 
 # Execute this function when this script is run from command line 
